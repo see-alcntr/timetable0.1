@@ -1,0 +1,26 @@
+<h1>Your Timetable</h1>
+
+<a href="/add">Add</a>
+<a href="/calendar">Calendar View</a>
+<a href="/export_pdf">Export PDF</a>
+<a href="/logout">Logout</a>
+
+<table border="1">
+<tr>
+<th>Subject</th>
+<th>Day</th>
+<th>Time</th>
+<th>Color</th>
+<th>Action</th>
+</tr>
+
+{% for d in data %}
+<tr style="background: {{ d[4] }}">
+    <td>{{ d[2] }}</td>
+    <td>{{ d[3] }}</td>
+    <td>{{ d[4] }}</td>
+    <td>{{ d[5] }}</td>
+    <td><a href="/delete/{{ d[0] }}">Delete</a></td>
+</tr>
+{% endfor %}
+</table>
